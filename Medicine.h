@@ -17,11 +17,9 @@ public:
     string name;
     Medicine() = default;
 
-
     Medicine(string name, int price){
         this->name = name;
         this->price = price;
-
     }
 
     bool CheckIfExpired(int currYear, int currMonth, int currDay){

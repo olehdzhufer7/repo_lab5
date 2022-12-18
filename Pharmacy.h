@@ -13,9 +13,9 @@ public:
     Pharmacy() = default;
 
     Medicine& GetCheapestMedicine(){
-        auto a = std::min(medicines.begin(), medicines.end(),
-                 [](auto a, auto b) { return a->GetDiscountPrice() < b->GetDiscountPrice(); });
-        return *a;
+        auto cure_first = std::min(medicines.begin(), medicines.end(),
+                 [](auto cure_first, auto cure_last) { return cure_first->GetDiscountPrice() < cure_last->GetDiscountPrice(); });
+        return *cure_first;
 
         int cheapestMedicine = 0;
         for(int i = 0; i < medicines.size(); i++){
